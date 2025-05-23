@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import './index.css'; // Make sure this includes Tailwind CSS
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  const decreaseHandler = () => {
+    setCount(count - 1);
+  };
+
+  const increaseHandler = () => {
+    setCount(count + 1);
+  };
+
+  const resetHandler = () => {
+    setCount(0);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="w-[100vw] h-[100vh] flex justify-center items-center bg-[#344151] flex-col gap-10">
+      <div className='text-[#0398d4] font-medium text-2xl'>Increment & Decrement</div>
+      
+      <div className="flex items-center gap-5 bg-white rounded-sm text-[25px] px-5 py-2">
+        <button onClick={decreaseHandler} className='border-r-2 border-[#bfbfbf] pr-5'>
+          -
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+        
+        <div className='font-bold'>
+          {count}
+        </div>
 
-export default App
+        <button onClick={increaseHandler} className='border-l-2 border-[#bfbfbf] pl-5'>
+          +
+        </button>
+      </div>
+
+      <button onClick={resetHandler} className='bg-[#0398d4] text-white px-5 py-2 rounded-md'>
+        Reset
+      </button>
+    </div>
+  );
+};
+
+export default App;
