@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './index.css'; // Make sure this includes Tailwind CSS
 
+
 const App = () => {
   const [count, setCount] = useState(0);
 
