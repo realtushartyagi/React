@@ -8,6 +8,7 @@ const App = () => {
   const decreaseHandler = () => {
     setCount(count - 1);
   };
+  
 
   const increaseHandler = () => {
     setCount(count + 1);
@@ -39,7 +40,7 @@ const App = () => {
         Reset
       </button>
     </div>
-  );
-};
+    
+)};
 
 export default App;
